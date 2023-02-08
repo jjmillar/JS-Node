@@ -38,6 +38,7 @@ for (let clave in persona) {
 
 
 // For of
-for() {
-    
+var arreglo = [1, 2, 3, 4, 5]
+for(let valor of arreglo) {
+    console.log(valor);
 }
