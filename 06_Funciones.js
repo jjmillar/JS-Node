@@ -20,4 +20,28 @@ saludar('julian');
 function saludar(nombre) {
     return `Hola soy ${nombre}`
 }
-saludar('Julian');
+var saludo = saludar('Julian');
+console.log(saludo);
+console.log(saludar('Julian millar'));
+
+
+// Expresion o anonimas
+var suma = function(a, b) {
+    return a + b;
+}
+
+console.log(suma(2, 2));
+
+// arrow function
+var resta = (a, b) => {
+    if(typeof a === 'number' && typeof b === 'number') {
+        return a - b;
+    } else {
+        return 'Solo puede restar numeros'
+    }    
+}
+
+console.log(resta(4, 2));
+
+var multiplicar = (a, b) => a * b; // funcion flecha tiene return implicito
+console.log(multiplicar(2, 2));
