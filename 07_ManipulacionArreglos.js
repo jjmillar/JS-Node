@@ -125,16 +125,122 @@ var resultado = estudiantes
 console.log(estudiantes);
 console.log(resultado);
 
+// some - every
+// SOME
+//var numeros = [1,2,3,4,5,6,7,8,9,10];
+var numeros = [1,3,5,7,9];
+var resultado = numeros.some((numero) => numero % 2 === 0);
+console.log(resultado);
+
+// EVERY
+//var numeros = [1,2,3,4,5,6,7,8,9,10];
+var numeros = [2,4,6,8];
+var resultado = numeros.every((numero) => numero % 2 === 0);
+console.log(resultado);
+
+// find - findIndex
+// FIND
+var clientes = [
+    { id: 1, nombre: '1'},
+    { id: 2, nombre: '2'},
+    { id: 3, nombre: '3'},
+    { id: 4, nombre: '4'},
+    { id: 5, nombre: '5'}
+];
+var cliente = clientes.find((cliente) => cliente.id === 1);
+var filter = clientes.filter((cliente) => cliente.id === 1);
+console.log(clientes);
+console.log(cliente);
+console.log(filter);
+
+//FindIndex
+var clientes = [
+    { id: 1, nombre: '1'},
+    { id: 2, nombre: '2'},
+    { id: 3, nombre: '3'},
+    { id: 4, nombre: '4'},
+    { id: 5, nombre: '5'}
+];
+var posicion = clientes.findIndex((cliente) => cliente.id === 2);
+console.log(posicion);
+console.log(clientes[posicion]);
+
+// includes
+var mascotas = ['perro', 'gato', 'conejo'];
+var resultado = mascotas.includes('gato');
+console.log(resultado);
+console.log('julian'.includes('an'));
+
+var buscador = (parametro) => {
+    let clientes = [
+        { id: 1, nombre: '1'},
+        { id: 2, nombre: '2'},
+        { id: 3, nombre: '3'},
+        { id: 4, nombre: '4'},
+        { id: 5, nombre: '5'}
+    ];
+
+    return clientes.filter((cliente) => cliente.nombre.includes(parametro));
+}
+
+console.log(buscador('1'));
+
+// Join
+var elementos = ['aire', 'fuego', 'agua'];
+var resultado = elementos.join('.');
+console.log(resultado);
+
+var clientes = [
+    { id: 1, nombre: '1'},
+    { id: 2, nombre: '2'},
+    { id: 3, nombre: '3'},
+    { id: 4, nombre: '4'},
+    { id: 5, nombre: '5'}
+];
+//console.log(clientes.join());
+var csvGenerator = (array, separator=',') => {
+    let headers = Object.keys(array[0]).join(separator);
+    let data = array.map((element) => Object.values(element).join(separator));
+    console.log(headers);
+    data.forEach(element => console.log(element));
+};
+
+csvGenerator(clientes);
 
 
 
+//console.log(Object.values({ id: 1, nombre: '1'})); //Object.value
+//console.log(Object.keys({ id: 1, nombre: '1'})); //Object.keys
 
 
+// concat - sort - splice - slice
+var array1 = [1,2,3,4,5];
+var array2 = [6,7,8,9,10];
+var array3 = array1.concat(array2);
+var array4 = [...array1, ...array2];
+console.log(array1);
+console.log(array2);
+console.log(array3);
+console.log(array4);
 
+// sort
+var array1 = [1,2,3,4,5,6,7,8,9,0];
+console.log(array1.sort());
 
+var meses = ['Dic', 'Ene', 'Mar', 'Feb'];
+console.log(meses.sort());
 
+var array = [1, 10000, 21, 30, 4];
+var ordenado = array.sort((a, b) => a - b);
+console.log(ordenado);
 
+// splice
+var nombres = ['1', '2', '3'];
+nombres.splice(1, 1, '4');
+console.log(nombres);
 
-
-
-
+//slice
+var nombres = ['1', '2', '3'];
+var resultado = nombres.slice(1, 3); //no incluye la ultima posicion
+console.log(resultado);
+console.log(nombres);
