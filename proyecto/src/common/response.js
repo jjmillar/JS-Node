@@ -1,7 +1,7 @@
 const createError = require('http-errors');
 
 module.exports.Response = {
-    succes: (res, status = 200, message = "Ok", body = {}) => {
+    success: (res, status = 200, message = "Ok", body = {}) => {
         res.status(status).json({ message, body });
     },
     error: (res, error = null) => {
